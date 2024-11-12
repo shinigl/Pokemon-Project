@@ -4,19 +4,6 @@ let filterBtn = document.getElementById("filter");
 let type = document.getElementById("type");
 
 
-//Fetching all possible pokemons
-async function fetchNPokemons() {
-    for (let i = 1; i <= 1025; i++) {
-        let pokemon = await fetchPokemOnData(i);
-        let cardElement = createCard(pokemon);
-        pokemonContainer.appendChild(cardElement);
-    }
-}
-
-fetchNPokemons();
-
-//Passing specific number of pokemons to fetch;
-
 async function fetchPokemOnData(i) {
     let data = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
     let result = await data.json();
@@ -24,7 +11,20 @@ async function fetchPokemOnData(i) {
 }
 
 
-//Creating cards
+async function fetchNPokemons() {
+    try{
+        
+        for (let i = 1; i <= 1025; i++) {
+        let pokemon = await fetchPokemOnData(i);
+        let cardElement = createCard(pokemon);
+        pokemonContainer.appendChild(cardElement);
+    }
+} catch(error){
+    console.log(error);
+}
+}
+
+fetchNPokemons();
 
 function createCard(pokemon) {
     let card = document.createElement('div');
@@ -34,7 +34,7 @@ function createCard(pokemon) {
             <div class="card-front">
                 <img src='${pokemon.sprites.front_default}' class="image"/>
                 <div class="name">${pokemon.name.toUpperCase()}</div>
-                <div class="types">${pokemon.types[0].type.name.toUpperCase()}</div>
+                <div class="types">${pokemon.types[0].type.name}</div>
                 <div class="ability">
                     <div class="ability-box">Hp: ${pokemon.stats[0].base_stat}</div>
                     <div class="ability-box">Att: ${pokemon.stats[1].base_stat}</div>  
@@ -51,8 +51,6 @@ function createCard(pokemon) {
     return card;
 }
 
-//Filter button 
-
 filterBtn.addEventListener("click", function(){
     let allCards = document.querySelectorAll(".card");
     allCards.forEach((card)=>{
@@ -66,7 +64,6 @@ filterBtn.addEventListener("click", function(){
     });
 });
 
-//Search input
 searchInput.addEventListener('keyup', function(){
     let searchValue = searchInput.value.toUpperCase();
     let allCards = document.querySelectorAll(".card");
@@ -80,4 +77,3 @@ searchInput.addEventListener('keyup', function(){
         }
     }); 
 });
-
