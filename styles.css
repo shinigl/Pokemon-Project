@@ -1,12 +1,13 @@
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;    
+    box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-.all{
+
+.all {
     background-color: rgb(237, 172, 50);
     background-position: center;
     background-size: cover;
@@ -14,36 +15,42 @@
     min-height: 100vh;
     backdrop-filter: rgba(128, 128, 128, 0.696);
 }
-.header{
+
+.header {
     display: flex;
     height: 20vh;
     width: 80%;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
 }
-#logo{
+
+#logo {
     height: 100%;
     width: 35%;
     margin-left: 400px;
     margin-top: 50px;
 }
-#moving2{
+
+#moving2 {
     height: 18vh;
     width: 15%;
 }
-#select{
+
+#select {
     display: flex;
     gap: 20px;
     height: 50px;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
-#type{
+
+#type {
     height: 30px;
     width: 200px;
     border-radius: 5px;
 }
-#filter{
+
+#filter {
     height: 30px;
     width: 120px;
     border-radius: 10px;
@@ -51,10 +58,12 @@
     font-weight: 500;
     font-size: 15px;
 }
-#filter:hover{
+
+#filter:hover {
     cursor: pointer;
 }
-#search{
+
+#search {
     height: 30px;
     width: 200px;
     border-radius: 5px;
@@ -62,7 +71,8 @@
     padding: 4px;
     color: black;
 }
-#reset{
+
+#reset {
     height: 30px;
     width: 50px;
     border: 0;
@@ -70,26 +80,28 @@
     border: 1px solid gray;
     padding: 2px;
 }
-#reset:hover{
+
+#reset:hover {
     background-color: rgb(63, 118, 244);
 }
-#pokemon_card_container{
+
+#pokemon_card_container {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    padding:  50px;
-    padding-left:130px;
+    padding: 50px;
+    padding-left: 130px;
     width: 80%;
-    /* background: linear-gradient(90deg, black ,gray,black); */
     background-color: rgb(233, 238, 249);
     border-radius: 25px;
     margin-inline: auto;
 }
 
+/* Card Styles */
 .card {
     height: 300px;
     width: 200px;
-    perspective: 1000px; /* Perspective for 3D effect */
+    perspective: 1000px;
     margin: 10px;
 }
 
@@ -105,7 +117,7 @@
 }
 
 .card:hover .card-inner {
-    transform: rotateY(180deg); /* Rotate the card on hover */
+    transform: rotateY(180deg);
     box-shadow: 20px 15px 15px 1px rgb(137, 136, 133);
     transition: 1s;
 }
@@ -115,7 +127,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Hide the back face when not flipped */
+    backface-visibility: hidden;
     border-radius: 50px;
     display: flex;
     flex-direction: column;
@@ -130,7 +142,7 @@
 
 .card-back {
     background-color: rgba(158, 193, 239, 0.468);
-    transform: rotateY(180deg); /* Rotate the back face to hide initially */
+    transform: rotateY(180deg);
 }
 
 .image {
@@ -169,31 +181,190 @@
     color: rgb(36, 104, 163);
     font-weight: 800;
 }
-#pikachu{
+
+#pikachu {
     height: 240px;
     width: 120px;
     position: absolute;
     top: 23px;
     right: 120px;
 }
-#pikachu2{
+
+#pikachu2 {
     height: 250px;
     width: 100px;
     position: absolute;
     top: 8px;
     right: 260px;
 }
-#pikachu3{
+
+#pikachu3 {
     height: 250px;
     width: 100px;
     position: absolute;
     top: 13px;
     left: 280px;
 }
-#pikachu4{
+
+#pikachu4 {
     height: 100px;
     width: 80px;
     position: absolute;
     top: 154px;
     left: 160px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Mobile */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        margin: auto;
+    }
+
+    #logo {
+        width: 60%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    #select {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #pokemon_card_container {
+        padding: 20px;
+        padding-left: 20px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .card {
+        height: 250px;
+        width: 160px;
+    }
+
+    .image {
+        height: 150px;
+        width: 140px;
+    }
+
+    #reset {
+        width: 40px;
+    }
+
+    #search {
+        width: 150px;
+    }
+
+    #filter {
+        width: 100px;
+    }
+
+    .name {
+        font-size: medium;
+    }
+
+    .types {
+        font-size: medium;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #logo {
+        width: 50%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    #select {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #pokemon_card_container {
+        padding: 20px;
+        padding-left: 20px;
+        width: 90%;
+    }
+
+    .card {
+        height: 270px;
+        width: 180px;
+    }
+
+    .image {
+        height: 160px;
+        width: 140px;
+    }
+
+    #reset {
+        width: 40px;
+    }
+
+    #search {
+        width: 180px;
+    }
+
+    #filter {
+        width: 110px;
+    }
+
+    .name {
+        font-size: medium;
+    }
+
+    .types {
+        font-size: medium;
+    }
+}
+
+.bg-img{
+    display: none;
+}
+#dragon{
+    width: 50px;
+}
+
+/* Large Screens/Desktop */
+@media (min-width: 1024px) {
+    .header {
+        flex-direction: row;
+    }
+
+    #logo {
+        width: 35%;
+        margin-left: 400px;
+        margin-top: 50px;
+    }
+
+    #select {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    #pokemon_card_container {
+        padding: 50px;
+        padding-left: 130px;
+        width: 80%;
+    }
+
+    .card {
+        height: 300px;
+        width: 200px;
+    }
+
+    .image {
+        height: 180px;
+        width: 160px;
+    }
 }
