@@ -34,7 +34,7 @@ function createCard(pokemon) {
             <div class="card-front">
                 <img src='${pokemon.sprites.front_default}' class="image"/>
                 <div class="name">${pokemon.name.toUpperCase()}</div>
-                <div class="types">${pokemon.types[0].type.name}</div>
+                <div class="types">${pokemon.types[0].type.name.toUpperCase()}</div>
                 <div class="ability">
                     <div class="ability-box">Hp: ${pokemon.stats[0].base_stat}</div>
                     <div class="ability-box">Att: ${pokemon.stats[1].base_stat}</div>  
