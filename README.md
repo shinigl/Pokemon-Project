@@ -2,6 +2,8 @@
 
 This project uses the **Pokémon API** to dynamically fetch Pokémon data and display it in the form of interactive Pokémon cards. Each card contains detailed information about a Pokémon, such as its name, image, types, abilities, and stats.
 
+## Live Link : https://pokemon-gallery-aniket.netlify.app/
+
 ## Features
 
 - Fetches real-time data from the **Pokémon API**.
