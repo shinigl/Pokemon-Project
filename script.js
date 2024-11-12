@@ -24,7 +24,7 @@ async function fetchPokemOnData(i) {
 }
 
 
-//Creating card
+//Creating cards
 
 function createCard(pokemon) {
     let card = document.createElement('div');
@@ -51,6 +51,8 @@ function createCard(pokemon) {
     return card;
 }
 
+//Filter button 
+
 filterBtn.addEventListener("click", function(){
     let allCards = document.querySelectorAll(".card");
     allCards.forEach((card)=>{
@@ -64,6 +66,7 @@ filterBtn.addEventListener("click", function(){
     });
 });
 
+//Search input
 searchInput.addEventListener('keyup', function(){
     let searchValue = searchInput.value.toUpperCase();
     let allCards = document.querySelectorAll(".card");
